@@ -1,4 +1,26 @@
-import { graphicsCards } from "./graphicsCards";
+const graphicsCards = [
+    { name: "NVIDIA RTX 3080", price: 699, memory: 10, region: "USA", link: "https://example.com/rtx3080" },
+    { name: "AMD Radeon RX 6800", price: 579, memory: 16, region: "UK", link: "https://example.com/rx6800" },
+    { name: "NVIDIA GTX 1660", price: 229, memory: 6, region: "Other", link: "https://example.com/gtx1660" },
+    { name: "AMD Radeon RX 7900 XT", price: 899, memory: 20, region: "USA", link: "https://example.com/rx7900xt" },
+    { name: "NVIDIA RTX 4090", price: 1599, memory: 24, region: "UK", link: "https://example.com/rtx4090" },
+    { name: "Graphics Card 6", price: 300, memory: 8, region: "USA", link: "https://example.com/card6" },
+    { name: "Graphics Card 7", price: 450, memory: 12, region: "UK", link: "https://example.com/card7" },
+    { name: "Graphics Card 8", price: 700, memory: 16, region: "Other", link: "https://example.com/card8" },
+    { name: "Graphics Card 9", price: 1100, memory: 20, region: "USA", link: "https://example.com/card9" },
+    { name: "Graphics Card 10", price: 1300, memory: 24, region: "UK", link: "https://example.com/card10" },
+    { name: "Graphics Card 11", price: 250, memory: 6, region: "Other", link: "https://example.com/card11" },
+    { name: "Graphics Card 12", price: 550, memory: 8, region: "USA", link: "https://example.com/card12" },
+    { name: "Graphics Card 13", price: 850, memory: 12, region: "UK", link: "https://example.com/card13" },
+    { name: "Graphics Card 14", price: 950, memory: 16, region: "Other", link: "https://example.com/card14" },
+    { name: "Graphics Card 15", price: 1200, memory: 20, region: "USA", link: "https://example.com/card15" },
+    { name: "Graphics Card 16", price: 1400, memory: 24, region: "UK", link: "https://example.com/card16" },
+    { name: "Graphics Card 17", price: 320, memory: 8, region: "Other", link: "https://example.com/card17" },
+    { name: "Graphics Card 18", price: 480, memory: 10, region: "USA", link: "https://example.com/card18" },
+    { name: "Graphics Card 19", price: 680, memory: 14, region: "UK", link: "https://example.com/card19" },
+    { name: "Graphics Card 20", price: 980, memory: 18, region: "Germany", link: "https://example.com/card20" },
+    { name: "Graphics Card 21", price: 980, memory: 18, region: "France", link: "https://example.com/card20" }
+];
 
 let activeFilters = { price: null, region: "USA", memory: null, sort: null };
 
