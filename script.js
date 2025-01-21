@@ -1,5 +1,12 @@
 import { graphicsCards } from "./graphicsCards";
 
+window.setPriceFilter = setPriceFilter;
+window.setRegionFilter = setRegionFilter;
+window.setMemoryFilter = setMemoryFilter;
+window.sortList = sortList;
+window.clearFilters = clearFilters;
+
+
 let activeFilters = { price: null, region: "USA", memory: null, sort: null };
 
 function setPriceFilter(min, max, button) {
