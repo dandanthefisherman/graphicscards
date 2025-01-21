@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Card Prices 4u</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+
+     
+        #sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ccc;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 10px;
+        }
+        button.active {
+            background-color: lightblue;
+        }
+        button {
+            margin: 5px 0;
+            display: block;
+            width: 100%;
+        }
+
+ 
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h3>Filters</h3>
+        <div>
+            <h4>Price</h4>
+            <button onclick="setPriceFilter(0, 300, this)" id="price0_300">$0 - $300</button>
+            <button onclick="setPriceFilter(301, 600, this)" id="price301_600">$301 - $600</button>
+            <button onclick="setPriceFilter(601, 1000, this)" id="price601_1000">$601 - $1000</button>
+            <button onclick="setPriceFilter(1001, Infinity, this)" id="price1001_plus">$1001+</button>
+        </div>
+
+        <div>
+            <h4>Region</h4>
+            <button onclick="setRegionFilter('USA', this)" id="regionUSA">Amazon USA</button>
+            <button onclick="setRegionFilter('UK', this)" id="regionUK">Amazon UK</button>
+            <button onclick="setRegionFilter('Germany', this)" id="regionGermany">Amazon Germany</button>
+            <button onclick="setRegionFilter('France', this)" id="regionFrance">Amazon France</button>
+            <button onclick="setRegionFilter('Other', this)" id="regionOther">Other Regions</button>
+        </div>
+
+        <div>
+            <h4>Memory</h4>
+            <button onclick="setMemoryFilter(0, 8, this)" id="memory0_8">0 - 8GB</button>
+            <button onclick="setMemoryFilter(9, 16, this)" id="memory9_16">9 - 16GB</button>
+            <button onclick="setMemoryFilter(17, 24, this)" id="memory17_24">17 - 24GB</button>
+        </div>
+
+        <div>
+            <h4>Sort</h4>
+            <button onclick="sortList('price',this)" id="sortPrice">Sort by Price</button>
+            <button onclick="sortList('memory',this)" id="sortMemory">Sort by Memory</button>
+        </div>
+
+        <div>
+            <button onclick="clearFilters()" id="clearFilters">Clear Filters</button>
+        </div>
+    </div>
+
+    <div id="content">
+        <h1>Graphics Card Prices 4u</h1>
+        <table id="graphicsCardTable">
+            <!-- Graphics card data will be displayed here -->
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
