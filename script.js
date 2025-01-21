@@ -1,5 +1,6 @@
 import { graphicsCards } from "./graphicsCards";
 
+window.graphicsCards = graphicsCards;
 window.setPriceFilter = setPriceFilter;
 window.setRegionFilter = setRegionFilter;
 window.setMemoryFilter = setMemoryFilter;
