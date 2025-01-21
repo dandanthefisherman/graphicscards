@@ -22,7 +22,7 @@ const graphicsCards = [
     { name: "Graphics Card 21", price: 980, memory: 18, region: "France", link: "https://example.com/card20" }
 ];
 
-let activeFilters = { price: null, region: null, memory: null, sort: null };
+let activeFilters = { price: null, region: "USA", memory: null, sort: null };
 
 function setPriceFilter(min, max, button) {
     clearCategoryFilters('price');
@@ -67,7 +67,7 @@ function clearCategoryFilters(category) {
 }
 
 function clearFilters() {
-    activeFilters = { price: null, region: null, memory: null, sort: null };
+    activeFilters = { price: null, region: "USA", memory: null, sort: null };
     document.querySelectorAll('button.active').forEach(button => button.classList.remove('active'));
     applyFilters();
 }
@@ -123,11 +123,22 @@ function displayGraphicsCards(cards) {
     // Populate the table with card data
     cards.forEach(card => {
         const row = document.createElement('tr');
+        
+      
+        if (card.region === 'USA') {
+            currencySymbol = '$';
+        } else if (card.region === 'UK') {
+            currencySymbol = '£'; // &#36; is the pound sign in HTML
+        } else if (card.region === 'France'||card.region === 'Germany') {
+            currencySymbol = '€'; // &#8364; is the euro sign in HTML, but it's more common to use € directly
+        } else {
+            currencySymbol = '$'; // default to dollar sign if region is unknown
+        }
         row.innerHTML = `
-            <td>${card.name}</td>
-            <td>$${card.price}</td>
-            <td>${card.memory}</td>
-            <td>${card.region}</td>
+            <td>${card.name}  </td>
+            <td>${currencySymbol}${card.price}  </td>
+            <td>${card.memory}  </td>
+            <td>${card.region}  </td>
             <td><a href="${card.link}" target="_blank">BUY HERE</a></td>
         `;
         table.appendChild(row);
